@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karunya Institute of Technology and Sciences</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script>
+        var app = angular.module('myapp',['ngRoute']);
+        app.config(function($routeProvider){
+            $routeProvider.when('/aboutus',{
+                            templateUrl:'aboutus.html'
+                            })
+                            .when('/register',{
+                            templateUrl:'register.html'
+                            })
+                            .when('/admission',{
+                            templateUrl:'admission.html'
+                            })
+                            .when('/calendar',{
+                            templateUrl:'calendar.html'
+                            })
+        })
+    </script>
+    <link rel="stylesheet" href="all.css">
+</head>
+<body ng-app="myapp">
+    <h1 class="ah">Karunya Institute of Technology and Sciences</h1>
+    <table width="100%" class="at">
+        <tr style="text-align:center;">
+            <td><a href="#!aboutus"> <div class="ad">About us</div> </a></td>
+            <td class="ad">|</td>
+            <td><a href="#!register"><div class="ad">Register</div> </a></td>
+            <td class="ad">|</td>
+            <td><a href="#!admission"><div class="ad">Admission</div> </a></td>
+            <td class="ad">|</td>
+            <td><a href="#!calendar"><div class="ad">Academic Calendar</div> </a></td>
+            <td class="ad">|</td>
+            <td>Search :<input type="search" placeholder="Search here"></td>
+        </tr>
+    </table>
+    <div ng-view>
+    </div>
+</body>
+</html>

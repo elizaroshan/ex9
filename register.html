@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="rd">
+        <div style="position: relative;left: 40%; color: blue;">
+            <h1>User Registration Form</h1>
+            <br>
+            <br>
+            <form name='myform'>
+                Name<span style="color: red;">*</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type='text' name="myName" ng-model="name" required pattern="[a-z,A-Z]{1,}">
+                <span style="color: red;" ng-show="myform.myName.$error.pattern">Name is invalid</span>
+                <br>
+                <br>
+                password<span style="color: red;">*</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type='password' name="mypassword" ng-model="password" required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                <span style="color: red;" ng-show="myform.mypassword.$error.pattern">Password is invalid</span>
+                <br>
+                <br>
+                Age<span style="color: red;">*</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;
+                <input type='number' name="myAge" ng-model="Age" required min="18" max="30">
+                <span style="color: red;" ng-show="myform.myAge.$error.min">Age is invalid</span>
+                <span style="color: red;" ng-show="myform.myAge.$error.max">Age is invalid</span>
+                <br>
+                <br>
+                Mobile Number<span style="color: red;">*</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type='tel' name="mynumber" ng-model="Number" required pattern="[0-9]{10}">
+                <span style="color: red;" ng-show="myform.mynumber.$error.pattern">Mobile number is invalid</span>
+                <br>
+                <br>
+                Email<span style="color: red;">*</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type='email' name="myemail" ng-model="email" required>
+                <span style="color: red;" ng-show="myform.myemail.$error.email">Email is invalid</span>
+                <br>
+                <br>
+                Gender<span style="color: red;">*</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type='radio' name="mygender" ng-model="Gender" value="Male" required>Male
+                &nbsp;&nbsp;&nbsp;
+                <input type='radio' name="mygender" ng-model="Gender" value="Female" required>Female
+                <br>
+                <br>
+                State<span style="color: red;">*</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;
+                <select name="mystate" ng-model="State" required>
+                    <option value="Tamilnadu">Tamilnadu</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Karnataka">Karnataka</option>
+                </select>
+                <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;
+                <Button ng-disabled="myform.$invalid">submit</Button>
+        </div>
+    </div>
+</body>
+</html>
